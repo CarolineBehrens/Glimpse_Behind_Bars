@@ -74,7 +74,8 @@ mortality_numbers <- total_mortality %>%
                         TRUE, FALSE))
 
 
-
+#saving cleaned up data to an rds file 
+#putting it in the clean data folder.
 write_rds(mortality_numbers, file = "prison/clean_data/mortality_numbers_data.rds")
 
 
@@ -93,6 +94,8 @@ state_crime <- crime_and_incarceration_by_state %>%
   pivot_longer(names_to = "type",
                values_to = "total",
                cols = c(property_crime_total, violent_crime_total))
+
+#saving as rds again
 
 write_rds(state_crime, file = "prison/clean_data/state_crime_data.rds")
 
@@ -136,6 +139,8 @@ fit_1 <- stan_glm(prisoner_count_in_thousands ~ population_bins + south + violen
                                       seed = 17,
                                       refresh = 0)
 
+#saving as rds so it runs quicker in future and 
+#dont have to run the fit live
 write_rds(fit_1, file = "prison/clean_data/fit_1.rds")
 
 
@@ -156,6 +161,8 @@ newobs_1 <- expand_grid(population_bins, south, violent_crime_bins)
 
 real_p <-add_fitted_draws(newobs_1, fit_1) 
 
+#saving real_p as an rds to make easier when 
+#creating the plot associated with the data.
 write_rds(real_p, file = "prison/clean_data/real_p.rds")
                   
 

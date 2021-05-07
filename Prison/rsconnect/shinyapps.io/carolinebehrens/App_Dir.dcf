@@ -1,0 +1,13 @@
+name: App_Dir
+title: App_Dir
+username:
+account: carolinebehrens
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4091075
+bundleId: 4571870
+url: https://carolinebehrens.shinyapps.io/App_Dir/
+when: 1620421664.16046
+lastSyncTime: 1620421664.16048
+asMultiple: FALSE
+asStatic: FALSE
